@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Site Migracija</title>
+  <style>
+    body { 
+      text-align: center;
+      margin-top: 50px;
+      padding: 50px; 
+      font: 20px Helvetica, sans-serif; 
+      color: #333; 
+    }
+    h1 { 
+      font-size: 50px; 
+    }
+    article { 
+      display: inline-block; 
+      text-align: left; 
+      width: 650px; 
+      margin: 0 auto; 
+      vertical-align: middle; 
+    }
+    a { 
+      color: #dc8100; 
+      text-decoration: none; 
+    }
+    a:hover { 
+      color: #333; 
+      text-decoration: none; 
+    }
+    p.countdown { 
+      font-size: 28px; 
+      margin-top: 20px; 
+    }
+  </style>
+</head>
+<body>
+
+<article>
+    <h1>Stranica uskoro ide online!</h1>
+    <div>
+        <p>Ispričavam se, stranica je trenutno u migraciji sa Jekyll-a na Hugo! Biti će online čim timer istekne. U slučaju prijeke potrebe, možete me uvijek <a href="https://github.com/TheMrRandomDude">kontaktirati</a> na mail, hvala mnogo na posjeti!!</p>
+        <p>&mdash; ard</p>
+    </div>
+</article>
+
+<p id="demo" class="countdown"></p>
+
+<script>
+  var countDownDate = new Date("Apr 1, 2024 00:00:00").getTime();
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("demo").innerHTML = "Vrijeme Isteklo";
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>
